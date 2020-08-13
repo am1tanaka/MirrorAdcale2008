@@ -75,8 +75,6 @@ namespace AM1.MirrorBlog
 
         private void Start()
         {
-            GameManager.Instance.EntryPlayer(); // ネット対応時に削除
-
             // デバッグ機能。起動と同時に自動開始する
             if (playOnAwake)
             {

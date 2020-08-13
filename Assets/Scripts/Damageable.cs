@@ -84,7 +84,6 @@ namespace AM1.MirrorBlog
         void Damage(Color c)
         {
             PlayerMaterialManager.Instance.UnuseMaterial(c);
-            GameManager.Instance.RemovePlayer();        // ネット対応したら不要
             GameManager.Instance.Hit(gameObject);
         }
     }

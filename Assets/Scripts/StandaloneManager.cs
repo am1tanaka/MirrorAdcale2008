@@ -22,7 +22,7 @@ namespace AM1.MirrorBlog
         void FixedUpdate()
         {
             // 敵が不足していたら追加
-            for (int i = GameManager.PlayerCount; i < GameManager.CharacterMax - 1; i++)
+            for (int i = PlayerMaterialManager.UseCount; i < GameManager.CharacterMax - 1; i++)
             {
                 Material mat = PlayerMaterialManager.Instance.GetMaterial();
                 if (mat != null)

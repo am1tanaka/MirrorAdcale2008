@@ -18,41 +18,9 @@ namespace AM1.MirrorBlog
         [Tooltip("爆発エフェクト"), SerializeField]
         GameObject explosionPrefab = null;
 
-        /// <summary>
-        /// プレイヤーの人数
-        /// </summary>
-        public static int PlayerCount { get; private set; } = 0;
-
         void Awake()
         {
             Instance = this;
-            PlayerCount = 0;
-        }
-
-        /// <summary>
-        /// プレイヤーを登録します。
-        /// ネットワーク対応したらNetworkManagerのクライアント数で処理できるので不要になります。
-        /// </summary>
-        public void EntryPlayer()
-        {
-            if (PlayerCount >= CharacterMax)
-            {
-#if UNITY_EDITOR
-                Debug.Log("プレイヤーの登録数をオーバーしました。");
-#endif
-                return;
-            }
-
-            PlayerCount++;
-        }
-
-        /// <summary>
-        /// プレイヤーを減らす。
-        /// ネットワーク対応したらNetworkManagerのクライアント数で処理できるので不要になります。
-        /// </summary>
-        public void RemovePlayer()
-        {
-            PlayerCount--;
         }
 
         /// <summary>

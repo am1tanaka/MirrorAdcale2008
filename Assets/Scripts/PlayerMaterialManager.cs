@@ -9,6 +9,11 @@ namespace AM1.MirrorBlog
     {
         public static PlayerMaterialManager Instance { get; private set; }
 
+        /// <summary>
+        /// 使用中のマテリアル数
+        /// </summary>
+        public static int UseCount { get; private set; } = 0;
+
         [Tooltip("マテリアル"), SerializeField]
         Material[] materials = null;
 
@@ -22,6 +27,7 @@ namespace AM1.MirrorBlog
             {
                 isUsing[i] = false;
             }
+            UseCount = 0;
         }
 
         /// <summary>
@@ -53,6 +59,7 @@ namespace AM1.MirrorBlog
                 if (!isUsing[i])
                 {
                     isUsing[i] = true;
+                    UseCount++;
                     return materials[i];
                 }
             }
@@ -71,6 +78,7 @@ namespace AM1.MirrorBlog
                 if (materials[i] == mat)
                 {
                     isUsing[i] = false;
+                    UseCount--;
                     return;
                 }
             }
