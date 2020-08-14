@@ -53,7 +53,10 @@ namespace AM1.MirrorBlog
 
         private void OnDestroy()
         {
-            CurrentPlayerAction.ShotRecovery();
+            if (CurrentPlayerAction != null)
+            {
+                CurrentPlayerAction.ShotRecovery();
+            }
         }
     }
 }
